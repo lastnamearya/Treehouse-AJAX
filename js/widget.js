@@ -8,5 +8,8 @@ xhr.onreadystatechange = function() {
   }
 };
 
-// Opening the XHR Object
+// Opening the XHR Object, In a real world application we'll point to a server side script that would dynamically generate this JSON Data with the most current information on our employees
 xhr.open('GET', 'data/employees.json');
+
+// Send the Request
+xhr.send();
