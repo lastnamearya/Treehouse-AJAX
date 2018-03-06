@@ -26,3 +26,31 @@ xhr.open('GET', 'data/employees.json');
 
 // Send the Request
 xhr.send();
+
+// ********************************************************* //
+
+var xhr2 = new XMLHttpRequest();
+
+xhr2.onreadystatechange = function() {
+  if(xhr2.readyState ===4){
+    var rooms = JSON.parse(xhr2.responseText);
+    console.log(rooms);
+    var roomsHTML = '<ul class="rooms">';
+    for(var i = 0; i < rooms.length; i++){
+      if(!rooms[i].available){
+        roomsHTML += '<li class="full">';
+      } else {
+        roomsHTML += '<li class="empty">';
+      }
+      roomsHTML += rooms[i].room;
+      roomsHTML += '</li>';
+    }
+    roomsHTML += '</ul>'; 
+    document.getElementById('roomList').innerHTML = roomsHTML;
+  }
+};
+
+xhr2.open('GET', '../data/rooms.json');
+
+xhr2.send();
+
