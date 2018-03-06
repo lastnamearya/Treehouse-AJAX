@@ -32,7 +32,7 @@ xhr.send();
 var xhr2 = new XMLHttpRequest();
 
 xhr2.onreadystatechange = function() {
-  if(xhr2.readyState ===4){
+  if(xhr2.readyState === 4){
     var rooms = JSON.parse(xhr2.responseText);
     console.log(rooms);
     var roomsHTML = '<ul class="rooms">';
