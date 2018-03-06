@@ -6,4 +6,7 @@ xhr.onreadystatechange = function() {
   if(xhr.readyState ===4){
 
   }
-}
+};
+
+// Opening the XHR Object
+xhr.open('GET', 'data/employees.json');
