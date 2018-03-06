@@ -4,7 +4,7 @@ var xhr = new XMLHttpRequest();
 // Skelton of a callback function
 xhr.onreadystatechange = function() {
   if(xhr.readyState ===4){
-
+    console.log(typeof xhr.responseText);
   }
 };
 
