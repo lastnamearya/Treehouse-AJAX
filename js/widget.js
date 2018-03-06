@@ -4,7 +4,8 @@ var xhr = new XMLHttpRequest();
 // Skelton of a callback function
 xhr.onreadystatechange = function() {
   if(xhr.readyState ===4){
-    console.log(typeof xhr.responseText);
+    // console.log(typeof xhr.responseText);
+    var employees = JSON.parse(xhr.responseText);console.log(employees); 
   }
 };
 
