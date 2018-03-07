@@ -22,8 +22,23 @@ $(document).ready(function () {
     });
     statusHTML += '</ul>';
     $('#employeeList').html(statusHTML);
-  });
-});
+  }); // end getJSOn
+
+  $.getJSON('../data/rooms.json', function(data){
+    var statusHTML = '<ul class="rooms">';
+    $.each(data, function(index, room){
+      if(room.available === true){
+        statusHTML += '<li class="empty">';
+      } else {
+        statusHTML += '<li class="full">';
+      }
+      statusHTML += room.room + '</li>';
+    });
+    statusHTML += '</ul>';
+    $('#roomList').html(statusHTML);
+  }); // end getJSOn
+
+}); // end ready
 
 
 
