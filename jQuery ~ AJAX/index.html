@@ -9,7 +9,12 @@
 
   <script>
     function sendAJAX() {
-      $('#ajax').load('sidebar.html');
+      // $('#ajax').load('sidebar.html');
+
+      // jQuery $.get() method, we're here only passing URL and callback, not passing data because we're requesting a static file
+      $.get('sidebar.html', function(response) {
+        $('#ajax').html(response);
+      });
       $('#load').hide();
     }
   </script>
